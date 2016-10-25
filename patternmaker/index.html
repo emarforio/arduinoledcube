@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Patternmaker</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <canvas id="workarea"></canvas>
+    <div class="row">
+      <p id="changeSizeLbl">Change Cube Size:</p>
+      <select id="sizeInput">
+        <option value="1">1x1</option>
+        <option value="2">2x2</option>
+        <option value="3" selected>3x3</option>
+        <option value="4">4x4</option>
+      </select>
+    </div>
+    <div class="row">
+      <button id="clear">Clear</button>
+      <button id="add">Add</button>
+    </div>
+    <div class="row">
+      <p>Ontime (ms):</p>
+      <input id="timeInput" type="text" value="200" size="8">
+    </div>
+    <div class="row">
+      <button class="shiftButton" id="shiftUpBtn">&uarr;</button>
+      <button class="shiftButton" id="shiftDownBtn">&darr;</button>
+    </div>
+    <div class="row">
+      <button class="shiftButton" id="shiftLeftBtn">&larr;</button>
+      <button class="shiftButton" id="shiftRightBtn">&rarr;</button>
+    </div>
+    <div class="row">
+      <button class="shiftButton" id="shiftForthBtn">&#x2199;</button>
+      <button class="shiftButton" id="shiftBackBtn">&#x2197;</button>
+    </div>
+
+    
+    
+    
+    <div id="wrapper">
+      <div id="listHeader">
+        <table>
+          <tr>
+            <th>Patternlist</th>
+            <th id="count">Count: 0</th>
+          </tr>
+
+          <tr>
+            <th><button id="generate">Generate code</button></th>
+            <th><button id="clearListBtn">Clear list</button></th>
+          </tr>
+          <tr>
+            <th colspan="2"><button id="previewBtn">Preview</button></th>
+          </tr>
+        </table>
+      </div>
+
+      <div id="listwrapper">
+        <ul id="patternList">
+          <!-- Dynamically filled -->
+          <!--
+          <li data-pattern="xxxxxxxx">
+            <div class="f">
+              <button class="js-remove">Remove</button>
+              <img src="data:image/png;base64,xxxxxxxxxxx">
+              <p>xxx</p>  
+            </div>
+          </li>
+          -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Popup modal -->
+    <div id="codemodal" class="modal">
+      <div>
+        <span id="closeCode" class="close">x</span>
+        <div class="row">
+          <h2>Generated pattern:</h2>
+          <code id="byteSize">(0 bytes)</code>
+        </div>
+        <pre id="modalText"></pre>
+        <div class="row">
+          <button id="copyBtn" data-clipboard-target="#modalText">Copy to clipboard</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Preview Modal -->
+    <div id="previewmodal" class="modal">
+      <div>
+        <span id="closePreview" class="close">x</span>
+        <h2>Preview:</h2>
+        <img id="previewGif"></img>
+      </div>
+    </div>
+
+    <div id="snackbar">Copied to clipboard</div>
+
+    <!-- Scripts -->
+    <script src="lib/clipboard.min.js"></script> <!-- Clipboard integration -->
+    <script src="lib/gif.js"></script> <!-- Dependency for creating gifs -->
+    <script src="lib/Sortable.min.js"></script> <!-- Dependency for the draggable list -->
+    <script src="script.js"></script> <!-- Main script -->
+  </body>
+</html>
