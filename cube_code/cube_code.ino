@@ -1,12 +1,19 @@
 #define UINT unsigned int
 #define PATTERN_DELAY 2
 
+// ***** Paste the generated code here (or add own) *****
 #define SIZE 3
 unsigned int pattern[][SIZE+1] = {
-    {(UINT) 0b010101101, (UINT) 0b000000000, (UINT) 0b000000000, 200},
-    {(UINT) 0b000000000, (UINT) 0b010101101, (UINT) 0b000000000, 200},
-    {(UINT) 0b000000000, (UINT) 0b000000000, (UINT) 0b010101101, 200}
+    {(UINT) 0b110110000, (UINT) 0b110110000, (UINT) 0b000000000, 300},
+    {(UINT) 0b011011000, (UINT) 0b011011000, (UINT) 0b000000000, 300},
+    {(UINT) 0b000011011, (UINT) 0b000011011, (UINT) 0b000000000, 300},
+    {(UINT) 0b000110110, (UINT) 0b000110110, (UINT) 0b000000000, 300},
+    {(UINT) 0b000000000, (UINT) 0b110110000, (UINT) 0b110110000, 300},
+    {(UINT) 0b000000000, (UINT) 0b011011000, (UINT) 0b011011000, 300},
+    {(UINT) 0b000000000, (UINT) 0b000011011, (UINT) 0b000011011, 300},
+    {(UINT) 0b000000000, (UINT) 0b000110110, (UINT) 0b000110110, 300}
   };
+// ***** Override everything between these comments *****
 
 // Declare all pins for up to 4x4 cube but only use as many as we need
 const byte level[] = {0,1,2,3}; // Top layer first
