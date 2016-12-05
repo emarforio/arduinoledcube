@@ -27,7 +27,7 @@ N = size of cube
 ## Connections
 The cube is limited to be at maximum 4x4 at default because of the limitations on the Arduino/Genuino Uno which only has 20 GPIOs. This code aims for simplicity and does therefore not use bit-shift registers to support larger cubes. If you have a higher capacity Arduino like the Mega you can extend the pins in the declaration.
 
-The number of pins used are defined by the size, we use one pin for each layer we control and one for each column. P<sub>s</sub> = s + s<sup>2</sup> which gives that for the Uno that only has 20 pins s \<\= 4
+The number of pins used are defined by the size, we use one pin for each layer we control and one for each column. P<sub>s</sub> = s + s<sup>2</sup> which gives that for the Uno that only has 20 pins s \<= 4
 
 ### Connect pins to Arduino
 `layerPins`: first = top layer
@@ -38,7 +38,10 @@ Only the used pins need to be connected, the others are simply ignored, eg. for 
 
 ### Creating a cube
 
-To create a cube you 
+To create a cube you follow these steps:
+
 1. Begin with the layers, connect all the anodes together by bending the legs and soldering them together. The kathodes should point straight down. 
+
 2. Place the layers on top of each other and  solder the kathodes to the one below.
+
 3. Done! Connect the layers and the columns to the Arduino as explained above.
